@@ -1,10 +1,9 @@
 package binar.academy.chapter3topic2
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_bmi.*
-import kotlinx.android.synthetic.main.activity_hasil_bmiactivity.*
 
 class BmiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -114,11 +113,11 @@ class BmiActivity : AppCompatActivity() {
         val bmi = hitungBMI(tinggiBadan.toDouble(), beratBadan.toDouble())
         val kategori = kategoriBerat(bmi)
 
-        val inten = Intent(this, HasilBMIActivity :: class.java)
+        val intent = Intent(this, HasilBMIActivity :: class.java)
         val serialization = HitungSerializable(umur, tinggiBadan, beratBadan, String.format("%2.f", bmi), kategori)
-        inten.putExtra("serial", "true")
-        inten.putExtra("dataser", serialization)
-        startActivity(inten)
+        intent.putExtra("serial", "true")
+        intent.putExtra("dataser", serialization)
+        startActivity(intent)
 
     }
 
@@ -131,10 +130,11 @@ class BmiActivity : AppCompatActivity() {
         val bmi = hitungBMI(tinggiBadan.toDouble(), beratBadan.toDouble())
         val kategori = kategoriBerat(bmi)
 
-        val inten = Intent(this, HasilBMIActivity :: class.java)
+        val intent = Intent(this, HasilBMIActivity :: class.java)
         val parcelization = HitungParcelable(umur, tinggiBadan, beratBadan, String.format("%2.f", bmi), kategori)
-        inten.putExtra("datapar", parcelization)
-        startActivity(inten)
+        intent.putExtra("parcel", "true")
+        intent.putExtra("datapar", parcelization)
+        startActivity(intent)
 
     }
 

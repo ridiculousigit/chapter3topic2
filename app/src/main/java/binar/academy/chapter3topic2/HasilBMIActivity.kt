@@ -1,9 +1,8 @@
 package binar.academy.chapter3topic2
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_bmi.*
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_hasil_bmiactivity.*
 
 class HasilBMIActivity : AppCompatActivity() {
@@ -24,7 +23,7 @@ class HasilBMIActivity : AppCompatActivity() {
             getBundle()
         } else if (intent.getStringExtra("serial") == "true") {
             getSerializable()
-        }
+        } else getParcelable()
 
     }
 
@@ -69,12 +68,11 @@ class HasilBMIActivity : AppCompatActivity() {
     fun getParcelable() {
 
         val datapar = intent.getParcelableExtra("datapar") as HitungParcelable?
-
-        hasilUmur.text = datapar!!.dataUmur
-        hasilTB.text = datapar.dataTinggi
-        hasilBB.text = datapar.dataBerat
-        hasilBMI.text = datapar.dataIdeal
-        hasilKategori.text = datapar.dataCategori
+        hasilUmur.text = datapar?.dataUmur
+        hasilTB.text = datapar?.dataTinggi
+        hasilBB.text = datapar?.dataBerat
+        hasilBMI.text = datapar?.dataIdeal
+        hasilKategori.text = datapar?.dataCategori
 
     }
 
