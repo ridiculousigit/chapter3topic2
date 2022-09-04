@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".HasilBMIActivity">
+
+    <!--Header Bar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/warna_tiga">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/barJudul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/warna_satu"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/goHome_hasil"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:text="@string/menu_dua_evo"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--Kolom Masukkan Data-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/barJudul"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!--Tampilan Hasil-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/daftarHasil"
+                android:layout_width="390dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/warna_empat"
+                app:strokeWidth="3dp">
+
+                <RelativeLayout
+                    android:id="@+id/hasilHitung_BMI2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="20dp">
+
+                    <TextView
+                        android:id="@+id/hasilJudul"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="Hasil :"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!--Hasil Umur-->
+                    <TextView
+                        android:id="@+id/isiUmur"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/hasilJudul"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/hasil_umur"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/hasilUmur"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/hasilJudul"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@id/isiUmur"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!--Hasil Tinggi-->
+                    <TextView
+                        android:id="@+id/isiTB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/isiUmur"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/hasil_tinggi"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/hasilTB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/hasilUmur"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@id/isiTB"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!--Hasil Berat-->
+                    <TextView
+                        android:id="@+id/isiBB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/isiTB"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/hasil_berat"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/hasilBB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/hasilTB"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@id/isiBB"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp" />
+
+                    <!--Hasil BMI-->
+                    <TextView
+                        android:id="@+id/isiBMI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/isiBB"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/hasil_bmi"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/hasilBMI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/hasilBB"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@id/isiBMI"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!--Hasil Kategori-->
+                    <TextView
+                        android:id="@+id/isiKategori"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/isiBMI"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/hasil_kategori"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/hasilKategori"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/hasilBMI"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@id/isiKategori"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

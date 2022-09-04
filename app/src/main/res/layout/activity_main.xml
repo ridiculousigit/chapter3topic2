@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/warna_tiga">
+
+        <FrameLayout
+            android:id="@+id/frameHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/bg_bottom_rounded"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="@string/judul_aplikasi"
+                    android:textColor="@android:color/white"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="@string/sub_judul_aplikasi"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/frameHeader"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/menuBMI"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/warna_empat"
+                app:strokeWidth="3dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/icBMI"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/info_menu_dua"
+                        android:padding="15dp"
+                        android:src="@drawable/ic_bmi" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@id/icBMI"
+                        android:text="@string/menu_kedua"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

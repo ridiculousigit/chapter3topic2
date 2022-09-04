@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".BmiActivity"
+    android:fitsSystemWindows="true">
+
+    <!--Header Bar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/warna_tiga">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/barHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/warna_satu"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/goHome_BMI"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:text="@string/menu_dua_evo"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--Kolom Masukkan Data-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/barHeader"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!--Data Umur-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dataNama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/warna_empat"
+                app:strokeWidth="3dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/textUmur"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/menu_dua_umur"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editUmur"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/textUmur"
+                        android:autofillHints=""
+                        android:inputType="numberDecimal"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="LabelFor" />
+
+                    <TextView
+                        android:id="@+id/infoUmur"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/editUmur"
+                        android:text="tahun"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Data Tinggi Badan-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dataTB2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/warna_empat"
+                app:strokeWidth="3dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/textTB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/menu_dua_tinggi"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editTB"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/textTB"
+                        android:autofillHints=""
+                        android:inputType="numberDecimal"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="LabelFor" />
+
+                    <TextView
+                        android:id="@+id/infoTB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/editTB"
+                        android:text="cm"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Data Berat Badan-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dataBB2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/warna_empat"
+                app:strokeWidth="3dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/textBB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/menu_dua_berat"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editBB"
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/textBB"
+                        android:autofillHints=""
+                        android:inputType="numberDecimal"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="LabelFor" />
+
+                    <TextView
+                        android:id="@+id/infoBB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toEndOf="@id/editBB"
+                        android:text="kg"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Tombol Hitung & Reset-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dataTombol"
+                android:layout_width="390dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--Tombol Explicit Intent-->
+                    <TextView
+                        android:id="@+id/txt_intentBMI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hitung dengan Intent"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_intentBMI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_intentBMI"
+                        android:backgroundTint="@color/warna_lima"
+                        android:text="@string/btn_intent"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!--Tombol Bundle-->
+                    <TextView
+                        android:id="@+id/txt_bundleBMI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/btn_intentBMI"
+                        android:text="Hitung dengan Bundle"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_bundleBMI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_bundleBMI"
+                        android:backgroundTint="@color/warna_lima"
+                        android:text="@string/btn_bundle"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!--Tombol Serializable-->
+                    <TextView
+                        android:id="@+id/txt_serializableBMI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/btn_bundleBMI"
+                        android:text="Hitung dengan Serializable"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_serializableBMI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_serializableBMI"
+                        android:backgroundTint="@color/warna_lima"
+                        android:text="@string/btn_serializable"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!--Tombol Parcelable-->
+                    <TextView
+                        android:id="@+id/txt_parcelableBMI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/btn_serializableBMI"
+                        android:text="Hitung dengan Parcelable"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_parcelableBMI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_parcelableBMI"
+                        android:backgroundTint="@color/warna_lima"
+                        android:text="@string/btn_parcelable"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!--Tombol Reset-->
+                    <Button
+                        android:id="@+id/btn_resetBMI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/btn_parcelableBMI"
+                        android:backgroundTint="@color/warna_enam"
+                        android:text="@string/btn_reset"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
